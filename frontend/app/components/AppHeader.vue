@@ -49,7 +49,7 @@
       <!-- Language Switcher -->
       <select
         :value="locale.value"
-        @change="setLocale($event.target.value)"
+        @change="onLocaleChange($event.target.value)"
         class="px2 py1 rounded text-sm b border-gray-300 dark:border-dark-700 bg-white dark:bg-dark-800 text-black dark:text-white"
       >
         <option v-for="loc in locales" :key="loc.code" :value="loc.code">{{ loc.name }}</option>
@@ -103,7 +103,9 @@ import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { useColorMode } from '@vueuse/core'; // Nuxt + UnoCSS compatibile
 
+import { useSwitchLocalePath } from '#imports';
 const { t, locale, locales, setLocale } = useI18n();
+const switchLocalePath = useSwitchLocalePath();
 const router = useRouter();
 
 const searchQuery = ref('');
@@ -115,6 +117,12 @@ const isDark = computed(() => colorMode.value === 'dark');
 const toggleDark = () => {
   colorMode.value = isDark.value ? 'light' : 'dark';
 };
+
+function onLocaleChange(newLocale) {
+  const path = switchLocalePath(newLocale);
+  if (path) router.push(path);
+  setLocale(newLocale);
+}
 
 function toggleMenu() {
   menuOpen.value = !menuOpen.value;
