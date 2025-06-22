@@ -1,0 +1,10 @@
+[build]
+  command = "cd frontend && npm run build"
+  publish = "frontend/.output/public"
+
+[functions]
+  node_bundler = "esbuild"
+
+[dev]
+  command = "cd frontend && npm run dev"
+  port = 3000
