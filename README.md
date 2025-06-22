@@ -1,6 +1,6 @@
 # 🧮 Calchub – AI-Powered Calculator Publishing Platform
 
-Welcome to **Calchub**, a full-stack, AI-enhanced system for creating, reviewing, and publishing world-class online calculators.
+Welcome to **Calchub**: a full-stack, AI-enhanced system for creating, reviewing, and publishing world-class online calculators.
 
 > Built to outperform OmniCalculator and similar tools with accessibility, multilingual content, CI automation, and full AI workflows.
 
