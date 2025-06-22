@@ -5,6 +5,15 @@ import es from './i18n/locales/es.json'
 import it from './i18n/locales/it.json'
 
 export default defineNuxtConfig({
+  ssr: true,
+  nitro: {
+    preset: 'netlify',
+    future: {
+      nativeSWR: false,
+      crawlLinks: false,
+      failOnError: false, 
+    },
+  },
   css: ['~/assets/css/main.css'],
 modules: [
   '@vite-pwa/nuxt'
@@ -158,6 +167,16 @@ pwa: {
 
   content: {
     defaultLocale: 'en',
+    markdown: {
+      // Register custom components for :::explain, :::learn, :::challenge
+      mdc: {
+        components: {
+          explain: '~/app/components/content/ExplainBlock.vue',
+          learn: '~/app/components/content/LearnBlock.vue',
+          challenge: '~/app/components/content/ChallengeBlock.vue',
+        }
+      }
+    }
   },
 
 
@@ -255,12 +274,5 @@ pwa: {
   // Testing features
   sourcemap: false,
 
-  nitro: {
-    future: {
-      nativeSWR: false,
-      crawlLinks: false,
-      failOnError: false, 
-    },
-  },
-// removed duplicate/invalid config block after closing })
+  // removed duplicate/invalid config block after closing })
 });
