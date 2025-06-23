@@ -7,7 +7,7 @@
   "scripts": {
     "check-build": "node check-build.js",
     "prebuild": "npm run check-build",
-    "build": "nuxt build",
+    "build": "npm run build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",

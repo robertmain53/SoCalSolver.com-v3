@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   ssr: true,
   nitro: {
     preset: 'netlify',
+    ssr: true,
     future: {
       nativeSWR: false,
       crawlLinks: false,
