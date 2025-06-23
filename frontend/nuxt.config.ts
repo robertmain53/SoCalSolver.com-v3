@@ -196,19 +196,19 @@ pwa: {
     },
     headers: {
       contentSecurityPolicy: {
-        'default-src': ['\'self\'', 'https://*.xanzhu.com'],
+        'default-src': ['\'self\'', 'https://*.socalsolver.com'],
         'script-src': [
           '\'self\'',
           '\'strict-dynamic\'',
           '\'nonce-{{nonce}}\'',
           '\'unsafe-inline\'',
-          'https://*.xanzhu.com',
+          'https://*.socalsolver.com',
         ],
         'style-src': ['\'self\'', '\'unsafe-inline\''],
         'base-uri': '\'none\'',
         'img-src': [
           '\'self\'',
-          'https://cdn.xanzhu.com',
+          'https://cdn.socalsolver.com',
           'https://assets.lotofcarrots.com/media/home/section/desktop/4.webp',
           'https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/AI_features_feb6.gif',
           'https://storage.googleapis.com/gweb-uniblog-publish-prod/images/feb_6_AI_hero.width-1000.format-webp.webp',
@@ -228,7 +228,7 @@ pwa: {
         'script-src-attr': ['\'none\''],
         'connect-src': [
           '\'self\'',
-          'https://*.xanzhu.com',
+          'https://*.socalsolver.com',
           'https://api.weatherapi.com',
           'https://api.iconify.design',
           ...(process.env.NODE_ENV === 'development'
