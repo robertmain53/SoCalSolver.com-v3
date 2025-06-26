@@ -97,7 +97,7 @@ pwa: {
 
       },
     lazy: false,
-    strategy: 'prefix_except_default',
+    strategy: 'prefix',
     locales: [
       {
         code: 'en',
