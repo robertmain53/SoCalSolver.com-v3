@@ -4,7 +4,6 @@ export default defineNuxtConfig({
   ssr: true,
   nitro: {
     preset: 'netlify',
-    ssr: true,
     future: {
       nativeSWR: false,
       crawlLinks: false,
@@ -65,6 +64,7 @@ pwa: {
 
   // i18n V10
   i18n: {
+    defaultLocale: 'en',
     messages: {
         en: {
           Finance: 'Finance',
@@ -93,7 +93,8 @@ pwa: {
 
       },
     lazy: false,
-    strategy: 'prefix_except_default',
+    strategy: 'no_prefix',
+    defaultLocale: 'en',
     locales: [
       {
         code: 'en',
