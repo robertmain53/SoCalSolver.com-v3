@@ -18,14 +18,4 @@
 <script setup>
 import AppHeader from '~/components/AppHeader.vue';
 import AppFooter from '~/components/AppFooter.vue';
-import { useI18n } from 'vue-i18n'
-import { useRoute } from 'vue-router'
-import { onServerPrefetch } from 'vue'
-
-onServerPrefetch(() => {
-  const { locale } = useI18n()
-  const route = useRoute()
-  // eslint-disable-next-line no-console
-  console.log('[NUXT SSR] locale:', locale.value, 'route:', route.fullPath)
-})
 </script>
