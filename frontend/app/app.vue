@@ -18,4 +18,15 @@
 <script setup>
 import AppHeader from '~/components/AppHeader.vue';
 import AppFooter from '~/components/AppFooter.vue';
+import { useI18n } from 'vue-i18n'
+import { useRoute } from 'vue-router'
+
+const { locale } = useI18n()
+const route = useRoute()
+
+if (process.server) {
+  // This will log during SSR
+  // eslint-disable-next-line no-console
+  console.log('[NUXT SSR] locale:', locale.value, 'route:', route.fullPath)
+}
 </script>
