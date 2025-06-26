@@ -65,7 +65,6 @@ pwa: {
 
   // i18n V10
   i18n: {
-    defaultLocale: 'en',
     messages: {
         en: {
           Finance: 'Finance',
