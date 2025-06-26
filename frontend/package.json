@@ -2,7 +2,7 @@
   "name": "socalsolver.com",
   "version": "1.0.135",
   "private": true,
-  "packageManager": "pnpm@10.12.1",
+  "packageManager": "pnpm@10.12.3",
   "license": "MIT",
   "scripts": {
     "check-build": "node check-build.js",
