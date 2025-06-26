@@ -1,8 +1,4 @@
 import process from 'node:process'
-import en from './i18n/locales/en.json'
-import fr from './i18n/locales/fr.json'
-import es from './i18n/locales/es.json'
-import it from './i18n/locales/it.json'
 
 export default defineNuxtConfig({
   ssr: true,
@@ -17,7 +13,8 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.css'],
 modules: [
-  '@vite-pwa/nuxt'
+  '@nuxtjs/i18n',
+  '@vite-pwa/nuxt',
 ],
 
 pwa: {
