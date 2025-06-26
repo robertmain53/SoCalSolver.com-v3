@@ -14,7 +14,8 @@ useHead({
   ],
 })
 
-const handleGoBack = () => window.history.length > 1 ? window.history.back() : handleError()
+console.log('Nuxt error page:', { error, localePath: localePath('/') })
+const handleGoBack = () => clearError({ redirect: localePath('/') })
 </script>
 
 <template>
