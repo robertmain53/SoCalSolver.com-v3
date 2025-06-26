@@ -18,4 +18,15 @@
 <script setup>
 import AppHeader from '~/components/AppHeader.vue';
 import AppFooter from '~/components/AppFooter.vue';
+
+onServerPrefetch(async () => {
+  if (process.server) {
+    try {
+      await $fetch('/api/__i18n-warmup__')
+    } catch (e) {
+      console.warn('i18n warmup failed:', e)
+    }
+  }
+})
+
 </script>

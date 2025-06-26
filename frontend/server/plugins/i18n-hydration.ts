@@ -1,18 +1,21 @@
-export default defineNuxtPlugin(async (nuxtApp) => {
+export default defineNuxtPlugin(() => {
     if (process.server) {
       const i18n = useI18n();
   
-      const allLocales = i18n.availableLocales || [];
-      for (const locale of allLocales) {
+      const locales = i18n.availableLocales || [];
+  
+      // Touch translation keys to force internal hydration
+      for (const locale of locales) {
         try {
-          await i18n.setLocale(locale);
+          const messages = i18n.getLocaleMessage(locale);
+          // Access a dummy key to trigger hydration
+          if (messages) {
+            void messages['__init__'] || null;
+          }
         } catch (e) {
-          console.warn(`[i18n preload] Failed to load locale ${locale}`, e);
+          console.warn(`[i18n preload] Failed to access messages for ${locale}`, e);
         }
       }
-  
-      // Revert to default locale
-      await i18n.setLocale(i18n.defaultLocale);
     }
   });
   
