@@ -1,3 +1,4 @@
+import { defineNuxtPlugin } from '#app'
 export default defineNuxtPlugin(() => {
     if (process.server) {
       const i18n = useI18n();
