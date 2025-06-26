@@ -8,7 +8,7 @@
     "check-build": "node check-build.js",
     "prebuild": "npm run check-build",
     "build": "nuxt build --preset netlify",
-    "postbuild": "cp -r node_modules/.cache/nuxt/.nuxt/dist/client/_nuxt .netlify/"
+    "postbuild": "cp -r node_modules/.cache/nuxt/.nuxt/dist/client/_nuxt .netlify/",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
